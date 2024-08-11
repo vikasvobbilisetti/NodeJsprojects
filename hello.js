@@ -3,7 +3,6 @@ const path = require("path");
 const sqlite3 = require("sqlite3");
 const { open } = require("sqlite");
 const bcrypt = require('bcrypt');
-
 const jwt = require("jsonwebtoken")
 
 const app = express();
@@ -14,7 +13,7 @@ let db = null;
 const initializeDbServer = async () => {
   try { // Added error handling
     db = await open({
-      filename: dbPath, // Removed potential space after colon
+      filename: dbPath, 
       driver: sqlite3.Database,
     });
     app.listen(3000, () => {
